@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<style type="text/css">
+.ui-widget, .ui-widget .ui-widget {
+	font-size: 12px;
+	!
+	important;
+}
+
+function goBack (){window .history.back();
+	
+}
+</style>
+	<h:title>
+		<ui:insert name="title">Page Title</ui:insert>
+	</h:title>
+</h:head>
+
+<h:body>
+	<p:growl id="msg" for="@page" />
+	<p:layout fullPage="true">
+		<p:layoutUnit position="west" size="200" header="Menu">
+		</p:layoutUnit>
+		<p:layoutUnit position="center" footer="guptam22 | Ver. 0.01" style="border:0;">
+			<p:toolbar>
+				<f:facet name="left">
+					<ui:insert name="buttons" />
+				</f:facet>
+				<f:facet name="right">
+					<p:commandButton value="Back" onclick="back()" />
+					<span class="ui-separator"> <span
+						class="ui-icon ui-icon-grip-dotted-vertical" />
+					</span>
+					<p:clock pattern="HH:mm dd-MMM-yyyy" />
+				</f:facet>
+			</p:toolbar>
+			<p:spacer/>
+			<ui:insert name="body">
+			</ui:insert>
+		</p:layoutUnit>
+	</p:layout>
+</h:body>
+</html>
